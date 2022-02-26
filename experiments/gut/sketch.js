@@ -10,14 +10,16 @@ let palette = [];
 let randomNum;
 function setup() {
   //noprotect
-  createCanvas(600,600);
-   background(242, 235, 223);
+  createCanvas(windowWidth,windowHeight);
+   //background(242, 235, 223);
+   background(255);
   
   palette = [
    
     //  color(154, 151, 166),
      //color(63, 65, 89),
-    color(155,0,0,10)
+    color(155,0,0,10),
+   // color(0,10)
     // color(181, 191, 159),
     // color(242, 235, 223),
     // color(242, 235, 223),//2 dont shows
@@ -29,11 +31,11 @@ function setup() {
   fr = createP('');
   
   flowField = new Array(cols*rows);
-  for (var i = 0; i <500; i++){
+  for (var i = 0; i <200; i++){
   particles[i] = new Particle();
     }
    
-   setInterval(resetSketch, 3500)
+  // setInterval(resetSketch, 3500)
 }
 
 function resetSketch(){
