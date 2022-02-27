@@ -8,12 +8,13 @@ var len = 400;
 var rules = [];
  rules[0] = {
   a: "F",
- // b: "FF+[+F-F-F]-[-F+F+F]"
- b:"F[+F]F[-F][F]"
-   //  b:"F[+F]F[-F][FF]"
+  b: "FF+[+F-F-F]-[-F+F+F]"
+ //b:"F[+F]F[-F][F]"
+    //b:"F[+F]F[-F][FF]"
   // b:"FF[F+FF]F[-F+F]"
- //  b:"FF[+F]F[F-F]"
- //  b:"F[F]+F[F+F]"
+   //b:"FF[+F]F[F-F]"
+   //b:"F[F]+F[F+F]"
+   
 }
 
 function generate() {

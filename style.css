@@ -1,0 +1,25 @@
+body{
+    font-family: apparat-semicond-light, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 200%;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 5%;
+}
+a:visited{
+    text-decoration: none;
+}
+
+.exp-links{
+    position: absolute;
+    top: 10%;
+    list-style-type:none;
+}
+
