@@ -117,6 +117,7 @@ function mainGraph(){
       vertex(nextX, nextY, nextZ);
     }
     endShape();
+     // text("change", x, y);
     
     
     

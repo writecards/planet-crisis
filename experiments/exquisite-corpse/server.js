@@ -1,18 +1,36 @@
+const { response } = require('express');
 const express = require('express')
 const app = express()
 const port = 3000;
-const port = process.env.PORT; // for glitch
+
+let wordArray1 = [];
+// const port = process.env.PORT; // for glitch
 
 app.use(express.static("public"));
 
-let counter = 0;
 
 
-app.get('/add', (req, res) => {
-    counter++;
-    console.log("someone added one ", counter );
-  res.json({value: counter})
+// app.get('/getWord1', (req, res) => {
+//     let query = req.query;
+//     let word1 = query.word1;
+//     console.log("someone requests the /getWord1 route" );
+//     res.redirect("/user-poems");
+//     //res.sendFile(__dirname + '/public/user-poems/index.html');
+    
+// })
+
+
+app.get('/word1', (req, res) => {
+    let query = req.query;
+    let word1 = query.word1;
+    wordArray1.push(word1);
+    console.log("received word1 as ", word1 );
+    res.json({value: word1})
+   // res.redirect("/user-poems");
+    //res.sendFile(__dirname + '/public/user-poems/index.html');
+    
 })
+
 
 app.get('/getCurrent', (req, res) => {
   res.json({value: counter})
@@ -23,5 +41,5 @@ app.get('/getCurrent', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`amazing app listening on port ${port}`)
+  console.log(`app listening at ${port}`)
 })

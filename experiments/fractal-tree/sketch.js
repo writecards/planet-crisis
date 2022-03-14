@@ -44,7 +44,7 @@ function generate() {
 function turtle(){
   background(255)
   resetMatrix();
- translate(width/2,height)
+  translate(width/2,height)
   stroke(0,100)
   strokeWeight(1)
   noFill()
