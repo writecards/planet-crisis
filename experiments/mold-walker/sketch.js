@@ -1,18 +1,24 @@
 let cell = 5;
 let walkers = [];
+
+
 function setup() {
   
   createCanvas(windowWidth, windowHeight);
+  colorMode(RGB);
    
   walkers.push(new Walker());
   
-   background(4, 8, 51);
-   background(250,225,167)
+   //background(4, 8, 51);
+   //background(250,225,167)
+  background(0);
   
  // drawGrid();
- 
-  
+
+
+    
 }
+
 
 
 function mouseClicked(){
@@ -26,13 +32,49 @@ function mouseClicked(){
   
 }
 
+
+function randomSelectTwo(){
+  let rando = random(1)
+   
+  if(rando > 0.5){
+   return true;
+  }else{
+    return false;
+  }
+}
+
+
+
 class Walker{
   constructor(x,y){
     this.pos = createVector(x,y);
     this.vel = p5.Vector.random2D();
     this.vel.mult(random(10))
+    //this.strokeColor = getRandomFromPalette();
     
-    this.show();
+//this.strokeColor = random(palette)
+this.alph = 90;
+    this.palette = [
+      color(28, 38, 30,this.alph),
+      color(50, 64, 44,this.alph),
+      color(75, 89, 45,this.alph),
+      color(126, 140, 74,this.alph),
+      color(128, 140, 35,this.alph),
+      color(12, 250, 0,this.alph)
+    ]
+    this.wordList = [
+      "regulating",
+      "tendencies",
+      "of",
+      "microscopic",
+      "fungi"
+    ]
+
+  }
+
+  getRandomStrokeFromPalette(){
+    let randStroke = floor(random(0,this.palette.length))
+    return this.palette[randStroke]
   }
   
   isOut(){
@@ -57,21 +99,31 @@ class Walker{
   }
   
   show(){
-   // fill(random(150),random(120),random(100))
-    stroke(16, 46, 19,90)
- 
-    // ellipse(this.pos.x,this.pos.y,cell,cell);
-  
-    beginShape(LINES)
-      vertex((this.pos.x)-cell/2, (this.pos.y)-cell/2);
-      vertex((this.pos.x)+cell/2, (this.pos.y)+cell/2);
-      vertex((this.pos.x)-cell/2, (this.pos.y)+cell/2);
-      vertex((this.pos.x)+cell/2, (this.pos.y)-cell/2);
+    this.strokeColor = this.getRandomStrokeFromPalette();
+    
+    fill(this.strokeColor);
+    // fill(255,50);
+   
+    ellipse(this.pos.x,this.pos.y,cell,cell);
+    //text(this.wordList[floor(random(this.wordList.length))], this.pos.x,this.pos.y)
 
-      endShape()
+    // if(randomSelectTwo()){
+    //   beginShape(LINES)
+    //     vertex((this.pos.x)-cell/2, (this.pos.y)-cell/2);
+    //     vertex((this.pos.x)+cell/2, (this.pos.y)+cell/2);
+    //     vertex((this.pos.x)-cell/2, (this.pos.y)+cell/2);
+    //     vertex((this.pos.x)+cell/2, (this.pos.y)-cell/2);
+
+    //     endShape()
+    // }else{
+    //   noStroke();
+    //   fill(this.strokeColor);
+    //   ellipse(this.pos.x,this.pos.y,cell)
+    // }
+  
   }
    
-  
+
 }
 
 function drawGrid(){
@@ -100,3 +152,5 @@ function draw(){
   
 }
     
+
+

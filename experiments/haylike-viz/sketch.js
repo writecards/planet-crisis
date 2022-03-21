@@ -16,6 +16,8 @@ let mean = [];
 let font1;
 
 
+let strawText;
+
 function preload(){
   table = loadTable("assets/monthly_csv.csv", "csv", "header")
   font1 = loadFont("assets/mons.ttf")
@@ -48,6 +50,8 @@ function setup() {
   
   cursor(HAND);
   textFont(font1);
+
+  strawText = createGraphics(window.innerWidth - 4, window.innerHeight - 4);
   
   
   
@@ -117,8 +121,15 @@ function mainGraph(){
       vertex(nextX, nextY, nextZ);
     }
     endShape();
-     // text("change", x, y);
-    
+     
+    // strawText.text("sorry greta",x,y,z);
+    // texture(strawText);
+ 
+    if(i%12 !=11){
+     //vertex(x,y,z);
+       text("change", x, y);
+    }
+
     
     
    
