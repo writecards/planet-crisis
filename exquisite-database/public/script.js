@@ -19,7 +19,14 @@ let messagebox5 = document.getElementById("messagebox5")
 let sendbutton5 = document.getElementById("send5")
 let word5 = document.getElementById("chat5")
 
+let filler1 = document.getElementById("filler1");
+let filler2 = document.getElementById("filler2");
+
 let usercount = document.getElementById("usercount")
+
+let filler1array = ['the', 'a']
+let filler2array = ['at','in', 'with', 'onto', 'into', 'with',
+                  'without', 'under',  'for', 'for', 'for']
 
 sendbutton1.addEventListener("click", ()=>{
   let text = messagebox1.value.trim();
@@ -81,19 +88,39 @@ sendbutton5.addEventListener("click", ()=>{
   }
 })
 
+function randomFromArray(arrayName){
+  return arrayName[Math.floor(Math.random()*arrayName.length)];
+}
+
+
 
 function appendMessage1(message){
   let text = message.content;
   let li = document.createElement("li");
   let p = document.createElement("p");
+ 
+  let filler1p = document.createElement("p");
+  let filler1li = document.createElement("li");
+
+
+  filler1p.innerHTML = randomFromArray(filler1array);
+  filler1li.appendChild(filler1p);
+  filler1.prepend(filler1li);
+  
+  
   p.innerHTML = text;
+  
   li.appendChild(p);
+
+  
 
   // make sure the new messages appear on top of the previous ones:
   // from: https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend
   word1.prepend(li);
   word1.scrollTop = 0;
-
+  for (let i = word1.children.length; i >= 0; i--) {
+    word1.appendChild(word1.children[Math.random() * i | 0]);
+  }
 }
 
 function appendMessage2(message){
@@ -104,6 +131,10 @@ function appendMessage2(message){
   li.appendChild(p);
   word2.prepend(li);
   word2.scrollTop = 0;
+  for (let i = word2.children.length; i >= 0; i--) {
+    word2.appendChild(word2.children[Math.random() * i | 0]);
+  }
+  
 }
 
 function appendMessage3(message){
@@ -114,6 +145,18 @@ function appendMessage3(message){
   li.appendChild(p);
   word3.prepend(li);
   word3.scrollTop = 0;
+
+
+  let filler2p = document.createElement("p");
+  let filler2li = document.createElement("li");
+  filler2p.innerHTML = randomFromArray(filler2array)
+  filler2li.appendChild(filler2p);
+  filler2.prepend(filler2li);
+
+
+  for (let i = word3.children.length; i >= 0; i--) {
+    word3.appendChild(word3.children[Math.random() * i | 0]);
+  }
 }
 
 function appendMessage4(message){
@@ -124,6 +167,9 @@ function appendMessage4(message){
   li.appendChild(p);
   word4.prepend(li);
   word4.scrollTop = 0;
+  for (let i = word4.children.length; i >= 0; i--) {
+    word4.appendChild(word4.children[Math.random() * i | 0]);
+  }
 }
 
 function appendMessage5(message){
@@ -134,6 +180,9 @@ function appendMessage5(message){
   li.appendChild(p);
   word5.prepend(li);
   word5.scrollTop = 0;
+  for (let i = word5.children.length; i >= 0; i--) {
+    word5.appendChild(word5.children[Math.random() * i | 0]);
+  }
 }
 
 function updateUserCount(data){

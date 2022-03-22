@@ -1,35 +1,126 @@
-#chat{
-  list-style: none;
-  border: 1px solid black;
-  width: 300px;
-  height: 200px;
-  padding:5px;
-  overflow: scroll;
-  word-wrap: break-word;
-  scroll-behavior: smooth;
-}
-#chat li:nth-child(odd){
-  background-color: black;
-  color: white;
+body{
+  font-family: 'Poppins', sans-serif;
+  font-size: 2vw;
+ 
 }
 
+
+button{
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  position: absolute;
+  left: 23%;
+  top: 15%;
+}
+
+button:hover {
+  background-color: rgb(249,250,251);
+}
+
+button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  box-shadow: none;
+}
+
+#inputBoxes{
+ position:absolute;
+
+  margin:30px auto 0;
+  padding:10px 50px 50px;
+}
+
+.group        { 
+  position:relative; 
+  margin-bottom:45px; 
+  left: 36%;
+  top: 20%;
+}
+input         {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus     { outline:none; }
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  
+  display:inline-table;
+  position: relative;
+ 
+  
+}
+
+
+
+li {
+  height: 30px;
+  line-height: 30px;
+}
+label{
+  font-size: 14px;
+  
+}
+
+#usercountP{
+  position:absolute;
+  display: block;
+  padding-left: 60%;
+  font-size: 20px;
+}
+
+
+#userWords{
+  padding-left: 8%;
+  padding-top: 10%;
+  font-weight: 800;
+}
 
 #chat1{
-  color:midnightblue
+  color:midnightblue;
 }
 
 #chat2{
-  color:#006eff
+  color:#006eff;
 }
 
 #chat3{
-  color:rgb(23, 156, 0)
+  color:rgb(23, 156, 0);
+ 
 }
 
 #chat4{
-  color:rgb(162, 0, 255)
+  color:rgb(162, 0, 255);
+ 
 }
 
 #chat5{
-  color:rgb(255, 102, 0)
+  color:rgb(255, 102, 0);
+
 } 
