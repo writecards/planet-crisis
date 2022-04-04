@@ -1,0 +1,137 @@
+#text{
+    color:slategray;
+    position: absolute;
+    padding:none;
+    /* padding-left: 30%;
+    padding-top: 30%; */
+    
+   
+    font-size: 40px;
+   
+        /* color: transparent;
+        text-shadow: 0 0 8px #000; */
+        
+}
+
+#text{
+    filter: blur(3px);
+        -webkit-filter: blur(10px);
+        transition: 0.1s;
+}
+
+span {
+    display: table;
+    margin: 0 auto;
+}
+
+#text:hover{
+    filter:none;
+    transition: 0.7s;
+    cursor: pointer;
+    
+}
+
+
+
+body{
+    color: blanchedalmond;
+}
+
+
+
+#citation{
+    display: table;
+    margin: 0 auto; 
+    color:slategray;
+    position: absolute;
+    padding:none;
+    padding-left: 75%;
+    padding-top: 50%;
+    display: none;
+   
+    font-size: 24px;
+}
+
+button{
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  border: 0;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #111827;
+  touch-action: manipulation;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+ 
+  
+}
+
+
+#nextButton{
+    position: absolute;
+  left: 90%;
+  top: 90%;
+}
+
+#homeButton{
+    position: absolute;
+    left:5%;
+    top: 90%;
+}
+
+
+/* button{
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: .75rem 1rem;
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    position: absolute;
+    left: 23%;
+    top: 15%;
+  }
+  
+   */
+
+   button:hover {
+    background-color: rgb(249,250,251);
+  }
+  
+  button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  
+  button:focus-visible {
+    box-shadow: none;
+  }

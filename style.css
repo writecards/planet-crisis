@@ -3,6 +3,9 @@ body{
     font-weight: 300;
     font-style: normal;
     font-size: 200%;
+    border: 0px; 
+    margin: 0px;
+    padding: 0px;
 }
 
 a{

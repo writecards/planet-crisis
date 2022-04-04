@@ -42,6 +42,14 @@ button:focus-visible {
   box-shadow: none;
 }
 
+
+
+#homeButton{
+    position: absolute;
+    left:90%;
+    top: 5%;
+}
+
 #inputBoxes{
  position:absolute;
 
