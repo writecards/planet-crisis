@@ -1,28 +1,168 @@
+/* 
+css variables we can create and use below
+ */
+ 
+:root {
+    --top-row-height:10%;
+    --left-mid-row-height: 40%;
+    --right-2nd-top-row-height: 20%;
+    --right-box-height: 35%;
+
+}
+
+
+/* 
+flexbox guide:
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+
 body{
-    font-family: apparat-semicond-light, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 200%;
-    border: 0px; 
-    margin: 0px;
-    padding: 0px;
+    margin: 0; 
+    padding: 10px;
+    font-family: 'Lexend Deca', sans-serif;
+   
 }
 
-a{
-    color: black;
-    text-decoration: none;
-}
-a:hover{
-    text-decoration: underline;
-    text-decoration-thickness: 5%;
-}
-a:visited{
-    text-decoration: none;
-}
-
-.exp-links{
-    position: absolute;
-    top: 10%;
-    list-style-type:none;
+.mainWrapper{
+    /* outline: 1px red solid;  */
+    /* padding: 5px; */
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 700px;
+    max-width: 1000px;
+   
+    height: 800px;
+    margin: auto;
+    
+    padding-top: 3%;
+    /* outline: 1px black solid;  */
 }
 
+.header{
+    outline: 1px black solid; 
+    text-align: center;
+}
+.header h1{
+    margin: 0;
+}
+
+.main{
+    /* outline: 1px black solid;  */
+    display: flex; 
+    font-size: 24px;
+    
+  
+   
+    
+}
+
+.main .left{
+    /* outline: 1px rgb(0, 0, 0) solid;  */
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: grey; */
+}
+
+.main .right{
+    /* outline: 1px rgb(0, 0, 0) solid;  */
+    /* width: 66%; */
+    flex-grow: 1;
+    /* background-color: lightblue; */
+}
+
+@media only screen and (max-width: 600px) {
+    .main{
+        /* background-color: aqua; */
+        flex-direction: column;
+    }
+    .main .left{
+        width: 100%;
+    }
+    .right{
+        height: 300px;
+    }
+    
+}
+
+/* LEFT */
+.left{
+    height: 600px;
+    justify-content: space-between;
+}
+.left-item{
+    outline: 1px rgb(0, 0, 0) solid; 
+    /* box-shadow: -1px 0px 0px 0px rgb(255, 0, 0), 1px 0px 0px 0px rgb(255, 0, 0), -1px -1px 0px 0px rgb(255, 0, 0), 0px 1px 0px 0px rgb(255, 0, 0); */
+}
+.left-item img{
+    width:100%;
+}
+.left-item:first-child{
+    height: var( --top-row-height);
+}
+.left-item:nth-child(2){
+    height: var( --left-mid-row-height);
+}
+.left-item:last-child{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.left-item:last-child:hover{
+    cursor: pointer;
+}
+
+/* RIGHT */
+.right{
+    height: 600px;
+}
+.right-item{
+    outline: 1px rgb(0, 0, 0) solid; 
+    
+    
+}
+
+.right-item:first-child{
+    height: var( --top-row-height);
+}
+.right-item:nth-child(2){
+    height: var(--right-2nd-top-row-height);
+}
+
+.right-item:last-child{
+    height: var(--right-box-height);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-item .clickbox{
+    outline: 1px rgb(0, 0, 0) solid; 
+    
+    width: 50%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-item .clickbox:nth-child(1):hover{
+    cursor:-webkit-grabbing;
+}
+
+.right-item .clickbox:nth-child(2):hover{
+    cursor:cell;
+}
+
+.right-item .clickbox:nth-child(3):hover{
+    cursor:-webkit-zoom-in;
+}
+
+.right-item .clickbox:nth-child(4):hover{
+    cursor: vertical-text;
+}

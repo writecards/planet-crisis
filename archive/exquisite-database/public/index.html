@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+
+  </head>
+  <body>
+    <button onclick="window.location.href='/index.html'" id = "homeButton">home</button>
+  
+    <div id = "q1" class = "group">
+      <input type="text" id="messagebox1" name=""placeholder = "how you're feeling:" value="">
+      <button id="send1" type="button" name="button">Enter</button>
+      <!-- <span class="bar"></span> -->
+      
+      <!-- <label>1 word to describe how you're feeling right now</label> -->
+   
+    </div>
+
+  
+  <div id = "q2" class = "group">
+      <input type = "text" id = "messagebox2" placeholder = "you're confused about:">
+      <button id = "send2">Enter</button>
+      <!-- <label>what's a thing you're confused about right now?</label> -->
+      <!-- <span class="bar"></span> -->
+     
+  </div>
+
+   
+
+  <div id = "q3" class = "group">
+    <input type = "text" id = "messagebox3" placeholder = "a verb:">
+    <button id = "send3">Enter</button>
+    <!-- <label>give me a verb</label> -->
+    <!-- <span class="bar"></span> -->
+   
+  </div>
+  
+   
+
+  <div id = "q4" class = "group">
+    <input type = "text" id = "messagebox4" placeholder = "how the world will end:">
+    <button id = "send4">Enter</button>
+    <!-- <label>how do you feel about the future</label> -->
+    <!-- <span class="bar"></span> -->
+  </div>
+
+  <div id = "q5" class = "group">
+    <input type = "text" id = "messagebox5" placeholder = "your favorite season:">
+    <button id = "send5">Enter</button>
+    <!-- <label>what's your favorite season/animal/plant/natural element?</label> -->
+    <!-- <span class="bar"></span> -->
+    
+  </div>
+ 
+
+
+  
+  <p id = "usercountP"><span id="usercount">0</span> other human(s) online.</p>
+
+
+<div id = "userWords">
+
+  <ul id ="filler1">
+  </ul>
+
+    <ul id="chat1">
+    </ul>
+  
+    <ul id="chat2">
+    </ul>
+ 
+
+    <ul id="chat3">
+    </ul>
+    <ul id ="filler2">
+    </ul>
+
+    <ul id="chat4">
+    </ul>
+
+    <ul id="chat5">
+    </ul>
+  </div>
+
+    
+
+    <script type="text/javascript" src="script.js"></script>
+    
+  </body>
+</html>

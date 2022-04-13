@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 10px;
+
+}
+
+.header{
+    outline: 1px black solid;
+}
+
+.main{
+    padding: 5px;
+    outline: 1px black solid;
+}
+
+.mainWrapper{
+    outline: 1px red solid;
+}
+
