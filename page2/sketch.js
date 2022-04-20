@@ -82,8 +82,9 @@ class Walker{
 
 
 function draw() {
+  
    // walkers.push(new Walker(target.x, target.y));
- walkers.forEach(walker =>{ if(!walker.isOut()){
+  walkers.forEach(walker =>{ if(!walker.isOut()){
     walker.move();
     walker.show();
   }
@@ -161,3 +162,9 @@ serverConnection.onmessage = function(event){
     }
 }
 
+
+function windowResized(){
+  
+  resizeCanvas(windowWidth, windowHeight);
+  background(0);
+}
