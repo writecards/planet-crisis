@@ -103,6 +103,11 @@ body{
 .left-item:nth-child(2){
     height: var( --left-mid-row-height);
 }
+#loop{
+    height: 100%;
+    width: 100%;
+ 
+}
 .left-item:last-child{
     height: 300px;
     display: flex;
@@ -166,3 +171,6 @@ body{
 .right-item .clickbox:nth-child(4):hover{
     cursor: vertical-text;
 }
+
+
+iframe{ border: none; }

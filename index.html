@@ -9,11 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
 </head>
 <body>
     <div class="mainWrapper">
         <div class="header">
-            <h1>sutro tower</h1>
+            <h1>planet in crisis</h1>
+            <!-- <iframe src="https://editor.p5js.org/rw2423/full/L7oUyKmAR"></iframe> -->
         </div>
         <div class="main">
             <div class="left">
@@ -22,6 +25,8 @@
                 </div>
                 <div class="left-item">
                     <!-- <img src="randomDrawings-19.png" alt=""> -->
+                    <iframe id = "loop" src="animated-loop/index.html">
+                    </iframe>
                 </div>
                 <div id = "intro" class="left-item" onclick="location.href='intro/index.html'">
                     <p>INTRO</p>
@@ -61,6 +66,6 @@
         </div>
     </div>
     
-
+<script src = "animated-loop.js"></script>
 </body>
 </html>
