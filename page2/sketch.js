@@ -14,6 +14,9 @@ let target = {
   y: 100
 }
 
+let userCount = 0;
+let userDotPalette;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0)
@@ -21,6 +24,8 @@ function setup() {
   colorMode(RGB);
    
   walkers.push(new Walker());
+
+  
 }
 
 class Walker{
@@ -36,6 +41,15 @@ class Walker{
         color(126, 140, 74,this.alph),
         color(128, 140, 35,this.alph),
         color(12, 250, 0,this.alph)
+      ];
+      this.userDotX = x;
+      this.userDotY = y;
+      this.userDotPalette = [
+        color(252, 140, 3),
+        color(255, 21, 0),
+        color(0, 166, 255),
+        color(4, 0, 255),
+        color(4, 0, 255)
       ]
   
     }
@@ -43,6 +57,12 @@ class Walker{
     getRandomStrokeFromPalette(){
       let randStroke = floor(random(0,this.palette.length))
       return this.palette[randStroke]
+    }
+
+   
+    getRandomUserDotCol(){
+      let randCol = floor(random(0,this.userDotPalette.length))
+      return this.userDotPalette[randCol]
     }
     
     isOut(){
@@ -67,9 +87,16 @@ class Walker{
     }
     
     show(){
-      this.strokeColor = this.getRandomStrokeFromPalette(); 
-      fill(this.strokeColor);
+      this.fillColor = this.getRandomStrokeFromPalette(); 
+      noStroke();
+      fill(this.fillColor);
       ellipse(this.pos.x,this.pos.y,cell,cell);
+    }
+
+    drawUserDot(){
+      this.userFill = this.getRandomUserDotCol();
+      fill(this.userFill);
+      ellipse(this.userDotX, this.userDotY, cell*1.5, cell*1.5);
     }
      
   
@@ -84,28 +111,35 @@ class Walker{
 function draw() {
   
    // walkers.push(new Walker(target.x, target.y));
-  walkers.forEach(walker =>{ if(!walker.isOut()){
+    walkers.forEach(walker =>{ if(!walker.isOut()){
     walker.move();
     walker.show();
+    walker.drawUserDot();
   }
   });
-//   circle(pos.x, pos.y, 20);
-  
-//   // ease position into target
-//   pos.x += easingSpeed* (target.x - pos.x);
-//   pos.y += easingSpeed* (target.y - pos.y);
+
   
 }
+
+
+
 
 function mouseClicked(){
    const x = mouseX - (mouseX % cell);
    const y = mouseY - (mouseY % cell);
+
+  //  let userDotFill = getRandomUserDotCol();
+  //   fill(userDotFill);
+  //   ellipse(x,y, cell*2, cell*2)
+ 
+  
    newWalkerPos(x, y);
    walkers = [];
-   //walkers.push(new Walker(x,y))
-  // setTarget(mouseX, mouseY);
+ 
   
-  sendTargetToServer();
+ sendTargetToServer();
+
+  
 }
 
 function newWalkerPos(tx, ty){
@@ -133,6 +167,8 @@ const serverConnection = new WebSocket(serverAddress);
 
 serverConnection.onopen = function(){
   console.log("p5 just connected to the server" + serverAddress);
+  userCount++;
+  console.log(userCount + " human(s) online");
   // serverConnection.send("hello server from p5");
 }
 
@@ -162,6 +198,9 @@ serverConnection.onmessage = function(event){
     }
 }
 
+serverConnection.onclose = function(event){
+  console.log("someone left");
+}
 
 function windowResized(){
   

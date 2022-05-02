@@ -48,9 +48,10 @@ function displayText(){
     }
     if(counter === 14){
       citationText.style.display = "table";
-      textOnScreen.style.filter = "none";
+      
     }else{
       citationText.style.display = "none";
+      textOnScreen.style.filter = "";
       
     }
   
