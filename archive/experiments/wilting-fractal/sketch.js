@@ -55,9 +55,8 @@ function generate(){
    console.log(count);
    if(count >= 5){ // remove() gives bugs iwth createP, resetSketch doesnt reset count/turtle
       //remove();
-     
     resetSketch();
-    sentence = "";
+    sentence = ""; //stops the tree from growing bc no more letters to feed to turtl
     secretText.style.display = "block";
    }
    
