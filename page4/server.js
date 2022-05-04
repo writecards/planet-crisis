@@ -5,6 +5,8 @@ let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 let userCount = 0;
 app.use(express.static('public'))
+//const port = 3000;
+const port = process.env.PORT;
 
 
 
@@ -98,6 +100,6 @@ io.on('connection', (socket) => {
   });
 
 });
-http.listen(3000, () => {
+http.listen(port, () => {
   console.log('listening on *:3000');
 });

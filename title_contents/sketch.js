@@ -60,7 +60,7 @@ function draw() {
     fill(0);
   } else {
     noFill();
-    stroke(0);
+    stroke(0,0,0);
     strokeWeight(1);
   }
 
@@ -78,7 +78,7 @@ function draw() {
 
     // map mouse axis
     var addToAngle = map(mouseX, 0, windowWidth, -PI, PI);
-    var curveHeight = map(mouseY, 0, windowHeight, 0.1, 3);
+    var curveHeight = map(mouseY, 0, windowHeight, 0.1, 1.5);
 
     for (var i = 0; i < path.commands.length - 1; i++) {
       var pnt0 = path.commands[i];
