@@ -99,10 +99,9 @@ function mainGraph(){
     let y = map(mean[i], -0.78, 1.35, height/2+boxSize/2, height/2-boxSize/2);
     let z = gapZ*(i%12);
   //datapoints
-  let size = map(mean[i], -0.78, 1.35, 1, 5);
-     strokeWeight(size);
-     stroke(255,0,0);
-  point(x,y,z);
+ 
+    stroke(255,0,0);
+    point(x,y,z);
     
     //words
     push();
@@ -122,6 +121,7 @@ function mainGraph(){
       nextZ = gapZ*((i+1)%12);
     }
     strokeWeight(0.5);
+    stroke(0,0,255)
     beginShape();
     if(i%12 !=11){
       vertex(x,y,z);
