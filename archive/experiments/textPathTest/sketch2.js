@@ -215,7 +215,6 @@ function mainGraph(){
       translate(0, 0, z);
       
       textSize(3);
-      fill(0);
       textAlign(CENTER);
       fill(255,0,0)
     
