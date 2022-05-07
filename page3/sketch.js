@@ -16,68 +16,6 @@ We have great respect for policy makers, elected officials and organizations acr
 let splitStringArr = string.split(' ');
 console.log(splitStringArr.length); 
 
-var x = [];
-var y = [];
-var segLength = 200;
-var numSegs = 20;
-
-let CHAINDETAILS = {
-	text:"ExxonMobil aims to achieve net-zero emissions from its operated assets by 2050 and is taking a comprehensive approach centered on developing detailed emission-reduction roadmaps for major operated assets. This ambition applies to Scope 1 and Scope 2 greenhouse gas emissions. It builds on the Company’s 2030 emission-reduction plans, which include plans to reach net-zero emissions in our Permian Basin operations by 2030, and ongoing investments in lower-emission solutions, including carbon capture and storage, hydrogen and biofuels.",
-	textR:0,
-	textG:0,
-	textB:0,
-	textsize:10,
-	textspacing:2
-};
-
-
-function dragSegment(i, xin, yin){
-	var dx = xin - x[i];
-	var dy = yin - y[i];
-	var angle = atan2(dy,dx);
-	
-	var thisLetter = CHAINDETAILS.text[i];
-	var prevLetter = CHAINDETAILS.text[i-1];
-	if(! prevLetter) {
-	  prevLetter = " ";
-	}
-	var w = (
-		 textWidth(thisLetter)
-		 +
-		 textWidth(prevLetter)
-		 ) * (CHAINDETAILS.textspacing / 2);
-	x[i] = xin - cos(angle) * w;
-	y[i] = yin - sin(angle) * w;
-	segment(CHAINDETAILS.text[i],w,x[i],y[i],angle);
-}
-function segment(c,w,x,y,a){
-  push();
-  translate(x, y);
-  rotate(a+PI);
-  // line(0, 0, -w, 0);
-  // ellipse(0,0,10,10);
-  
-  
-  text(c,0,0);
-  pop();
-}
-
-
-function reload(){
-  // eval("CHAINDETAILS = "+document.getElementById('setup').value);
-  stroke(CHAINDETAILS.textR,CHAINDETAILS.textG,CHAINDETAILS.textB);
-  fill(CHAINDETAILS.textR,CHAINDETAILS.textG,CHAINDETAILS.textB);
-  for(var i=0; i < CHAINDETAILS.text.length; i++) {
-    	x.push(width/2);
-    	y.push(height/2);
-   }
- textSize(CHAINDETAILS.textsize);
-}
-
-
-
-
-
 
 ////////graph////
 
@@ -90,9 +28,6 @@ let mean = [];
  let boxSize = 400;
 let font1;
 
-
-let strawText;
-
 function preload(){
   table = loadTable("assets/monthly_csv.csv", "csv", "header")
   font1 = loadFont("assets/opensans.ttf")
@@ -103,11 +38,8 @@ function setup() {
   let canvasH = windowHeight;
   myCanvas = createCanvas(canvasW, canvasH, WEBGL);
   myCanvas.position(0, (windowHeight-canvasH)/2);
-
-  strokeWeight(1);
-    textAlign(CENTER,CENTER);
-    reload();
-  
+  textAlign(CENTER,CENTER);
+   
   //setting up camera uncomment line below 
   createEasyCam();
   document.oncontextmenu = ()=> false;
@@ -129,9 +61,7 @@ function setup() {
   
   cursor(HAND);
   textFont(font1);
-  
-  
-  
+
 }
 
 
@@ -148,7 +78,11 @@ function draw() {
   mainGraph();
   pop();
 
-
+  if(mouseIsPressed === true){
+    cursor('grab');
+  }else{
+    cursor(HAND);
+  }
 }
 
 let nextX, nextY, nextZ;
