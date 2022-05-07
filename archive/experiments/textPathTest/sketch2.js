@@ -9,12 +9,28 @@ let CHAINDETAILS = {
 };
 
 
+
 var x = [];
 var y = [];
 var segLength = 1000;
 var numSegs = 20;
 
+//let string = "ExxonMobil leverages its core capabilities to meet society’s needs for products essential for modern life, while addressing the challenge of climate change. Our strategy uses our advantages in scale, integration, technology and people to build globally competitive businesses that lead industry in earnings and cash flow growth across a broad range of scenarios. We plan to play a leading role in the energy transition, while retaining investment flexibility across a portfolio of evolving opportunities to maximize shareholder returns.";
+//let splitStringArr = string.split('');
 
+let string = "We understand the tremendous challenge represented by climate change and have fully supported the Paris Agreement since its inception. Our scientists are working to develop innovative solutions to help reduce emissions, with a focus on the highest emitting and most difficult to decarbonize sectors of the economy: commercial transportation, power generation and heavy industry. It is in these areas where we believe ExxonMobil can best contribute to the challenge of climate change. For example, through our new ExxonMobil Low Carbon Solutions business we are advancing plans for large-scale emission reductions with new carbon capture and storage opportunities around the world. We are also leveraging ExxonMobil’s significant experience in the production of hydrogen which, when coupled with carbon capture and storage, is likely to play a critical role in a lower-carbon energy system. We’re investing $3 billion on lower-emission energy solutions through 2025 on top of $10 billion we’ve spent over the past two decades. As we develop additional value-added opportunities, I expect these investments to grow. We believe a price on carbon emissions is essential to achieving net zero emissions. Carbon pricing would send a clear signal through the market, creating incentives to reduce emissions, fostering investment in R&D to advance solutions and providing consumers with transparency to make the best choices. While there is some resistance to a carbon tax, we are actively and publicly discussing other options, including lower-carbon fuels and other sector-based approaches that would place a uniform, predictable cost on carbon. Today, through government regulation and incentives, we are paying to reduce carbon throughout the economy. Unfortunately, most of us don’t know what it’s costing. We think it’s vitally important for the cost of reducing carbon to be more transparent to enable comparisons of the various options to help policy makers reduce emissions at the lowest overall cost to society. We are actively working to reduce our own emissions. Overall, we have reduced operated greenhouse gas emissions by 11 percent from 2016 to 2020, and we’ve laid out plans for significant further reductions by 2025. We are also working to find new and better ways to monitor and reduce methane emissions, including collaborations with universities, environmental groups and other industry partners. Through 2020, we reduced methane emissions nearly 34 percent across our U.S. unconventional operations, compared to 2016 when the Paris Agreement was signed. We have great respect for policy makers, elected officials and organizations across the political spectrum who are grappling to effectively address climate change, one of the greatest challenges of our time. ExxonMobil’s position is clear: we want to be part of the solution while responsibly providing affordable energy required to power the economy. We have the experience, capabilities, capacity and commitment to help meet this critical need. We understand the tremendous challenge represented by climate change and have fully supported the Paris Agreement since its inception. Our scientists are working to develop innovative solutions to help reduce emissions, with a focus on the highest emitting and most difficult to decarbonize sectors of the economy: commercial transportation, power generation and heavy industry. It is in these areas where we believe ExxonMobil can best contribute to the challenge of climate change. For example, through our new ExxonMobil Low Carbon Solutions business we are advancing plans for large-scale emission reductions with new carbon capture and storage opportunities around the world. We are also leveraging ExxonMobil’s significant experience in the production of hydrogen which, when coupled with carbon capture and storage, is likely to play a critical role in a lower-carbon energy system. We’re investing $3 billion on lower-emission energy solutions through 2025 on top of $10 billion we’ve spent over the past two decades. As we develop additional value-added opportunities, I expect these investments to grow. We believe a price on carbon emissions is essential to achieving net zero emissions. Carbon pricing would send a clear signal through the market, creating incentives to reduce emissions, fostering investment in R&D to advance solutions and providing consumers with transparency to make the best choices. While there is some resistance to a carbon tax, we are actively and publicly discussing other options, including lower-carbon fuels and other sector-based approaches that would place a uniform, predictable cost on carbon. Today, through government regulation and incentives, we are paying to reduce carbon throughout the economy. Unfortunately, most of us don’t know what it’s costing. We think it’s vitally important for the cost of reducing carbon to be more transparent to enable comparisons of the various options to help policy makers reduce emissions at the lowest overall cost to society. We are actively working to reduce our own emissions. Overall, we have reduced operated greenhouse gas emissions by 11 percent from 2016 to 2020, and we’ve laid out plans for significant further reductions by 2025. We are also working to find new and better ways to monitor and reduce methane emissions, including collaborations with universities, environmental groups and other industry partners. Through 2020, we reduced methane emissions nearly 34 percent across our U.S. unconventional operations, compared to 2016 when the Paris Agreement was signed. We have great respect for policy makers, elected officials and organizations across the political spectrum who are grappling to effectively address climate change, one of the greatest challenges of our time. ExxonMobil’s position is clear: we want to be part of the solution while responsibly providing affordable energy required to power the economy. We have the experience, capabilities, capacity and commitment to help meet this critical need. We understand the tremendous challenge represented by climate change and have fully supported the Paris Agreement since its inception. Our scientists are working to develop innovative solutions to help reduce emissions, with a focus on the highest emitting and most difficult to decarbonize sectors of the economy: commercial transportation, power generation and heavy industry. It is in these areas where we believe ExxonMobil can best contribute to the challenge of climate change. For example, through our new ExxonMobil Low Carbon Solutions business we are advancing plans for large-scale emission reductions with new carbon capture and storage opportunities around the world. We are also leveraging ExxonMobil’s significant experience in the production of hydrogen which, when coupled with carbon capture and storage, is likely to play a critical role in a lower-carbon energy system. We’re investing $3 billion on lower-emission energy solutions through 2025 on top of $10 billion we’ve spent over the past two decades. As we develop additional value-added opportunities, I expect these investments to grow. We believe a price on carbon emissions is essential to achieving net zero emissions. Carbon pricing would send a clear signal through the market, creating incentives to reduce emissions, fostering investment in R&D to advance solutions and providing consumers with transparency to make the best choices. While there is some resistance to a carbon tax, we are actively and publicly discussing other options, including lower-carbon fuels and other sector-based approaches that would place a uniform, predictable cost on carbon. Today, through government regulation and incentives, we are paying to reduce carbon throughout the economy. Unfortunately, most of us don’t know what it’s costing. We think it’s vitally important for the cost of reducing carbon to be more transparent to enable comparisons of the various options to help policy makers reduce emissions at the lowest overall cost to society. We are actively working to reduce our own emissions. Overall, we have reduced operated greenhouse gas emissions by 11 percent from 2016 to 2020, and we’ve laid out plans for significant further reductions by 2025. We are also working to find new and better ways to monitor and reduce methane emissions, including collaborations with universities, environmental groups and other industry partners. Through 2020, we reduced methane emissions nearly 34 percent across our U.S. unconventional operations, compared to 2016 when the Paris Agreement was signed. We have great respect for policy makers, elected officials and organizations across the political spectrum who are grappling to effectively address climate change, one of the greatest challenges of our time. ExxonMobil’s position is clear: we want to be part of the solution while responsibly providing affordable energy required to power the economy. We have the experience, capabilities, capacity and commitment to help meet this critical need. We understand the tremendous challenge represented by climate change and have fully supported the Paris Agreement since its inception. Our scientists are working to develop innovative solutions to help reduce emissions, with a focus on the highest emitting and most difficult to decarbonize sectors of the economy: commercial transportation, power generation and heavy industry. It is in these areas where we believe ExxonMobil can best contribute to the challenge of climate change. For example, through our new ExxonMobil Low Carbon Solutions business we are advancing plans for large-scale emission reductions with new carbon capture and storage opportunities around the world. We are also leveraging ExxonMobil’s significant experience in the production of hydrogen which, when coupled with carbon capture and storage, is likely to play a critical role in a lower-carbon energy system.\
+We’re investing $3 billion on lower-emission energy solutions through 2025 on top of $10 billion we’ve spent over the past two decades. As we develop additional value-added opportunities, I expect these investments to grow. We believe a price on carbon emissions is essential to achieving net zero emissions. Carbon pricing would send a clear signal through the market, creating incentives to reduce emissions, fostering investment in R&D to advance solutions and providing consumers with transparency to make the best choices. While there is some resistance to a carbon tax, we are actively and publicly discussing other options, including lower-carbon fuels and other sector-based approaches that would place a uniform, predictable cost on carbon. Today, through government regulation and incentives, we are paying to reduce carbon throughout the economy. Unfortunately, most of us don’t know what it’s costing. We think it’s vitally important for the cost of reducing carbon to be more transparent to enable comparisons of the various options to help policy makers reduce emissions at the lowest overall cost to society. We are actively working to reduce our own emissions. Overall, we have reduced operated greenhouse gas emissions by 11 percent from 2016 to 2020, and we’ve laid out plans for significant further reductions by 2025. We are also working to find new and better ways to monitor and reduce methane emissions, including collaborations with universities, environmental groups and other industry partners. Through 2020, we reduced methane emissions nearly 34 percent across our U.S. unconventional operations, compared to 2016 when the Paris Agreement was signed. We have great respect for policy makers, elected officials and organizations across the political spectrum who are grappling to effectively address climate change, one of the greatest challenges of our time. ExxonMobil’s position is clear: we want to be part of the solution while responsibly providing affordable energy required to power the economy. We have the experience, capabilities, capacity and commitment to help meet this critical need. We understand the tremendous challenge represented by climate change and have fully supported the Paris Agreement since its inception. Our scientists are working to develop innovative solutions to help reduce emissions, with a focus on the highest emitting and most difficult to decarbonize sectors of the economy: commercial transportation, power generation and heavy industry. It is in these areas where we believe ExxonMobil can best contribute to the challenge of climate change. For example, through our new ExxonMobil Low Carbon Solutions business we are advancing plans for large-scale emission reductions with new carbon capture and storage opportunities around the world. We are also leveraging ExxonMobil’s significant experience in the production of hydrogen which, when coupled with carbon capture and storage, is likely to play a critical role in a lower-carbon energy system. We’re investing $3 billion on lower-emission energy solutions through 2025 on top of $10 billion we’ve spent over the past two decades. As we develop additional value-added opportunities, I expect these investments to grow. We believe a price on carbon emissions is essential to achieving net zero emissions. Carbon pricing would send a clear signal through the market, creating incentives to reduce emissions, fostering investment in R&D to advance solutions and providing consumers with transparency to make the best choices. While there is some resistance to a carbon tax, we are actively and publicly discussing other options, including lower-carbon fuels and other sector-based approaches that would place a uniform, predictable cost on carbon. Today, through government regulation and incentives, we are paying to reduce carbon throughout the economy. Unfortunately, most of us don’t know what it’s costing. We think it’s vitally important for the cost of reducing carbon to be more transparent to enable comparisons of the various options to help policy makers reduce emissions at the lowest overall cost to society. We are actively working to reduce our own emissions. Overall, we have reduced operated greenhouse gas emissions by 11 percent from 2016 to 2020, and we’ve laid out plans for significant further reductions by 2025. We are also working to find new and better ways to monitor and reduce methane emissions, including collaborations with universities, environmental groups and other industry partners. Through 2020, we reduced methane emissions nearly 34 percent across our U.S. unconventional operations, compared to 2016 when the Paris Agreement was signed. We have great respect for policy makers, elected officials and organizations across the political spectrum who are grappling to effectively address climate change, one of the greatest challenges of our time. ExxonMobil’s position is clear: we want to be part of the solution while responsibly providing affordable energy required to power the economy. We have the experience, capabilities, capacity and commitment to help meet this critical need. We understand the tremendous challenge represented by climate change and have fully supported the Paris Agreement since its inception. Our scientists are working to develop innovative solutions to help reduce emissions, with a focus on the highest emitting and most difficult to decarbonize sectors of the economy: commercial transportation, power generation and heavy industry. It is in these areas where we believe ExxonMobil can best contribute to the challenge of climate change. For example, through our new ExxonMobil Low Carbon Solutions business we are advancing plans for large-scale emission reductions with new carbon capture and storage opportunities around the world. We are also leveraging ExxonMobil’s significant experience in the production of hydrogen which, when coupled with carbon capture and storage, is likely to play a critical role in a lower-carbon energy system. We’re investing $3 billion on lower-emission energy solutions through 2025 on top of $10 billion we’ve spent over the past two decades. As we develop additional value-added opportunities, I expect these investments to grow. We believe a price on carbon emissions is essential to achieving net zero emissions. Carbon pricing would send a clear signal through the market, creating incentives to reduce emissions, fostering investment in R&D to advance solutions and providing consumers with transparency to make the best choices. While there is some resistance to a carbon tax, we are actively and publicly discussing other options, including lower-carbon fuels and other sector-based approaches that would place a uniform, predictable cost on carbon. Today, through government regulation and incentives, we are paying to reduce carbon throughout the economy. Unfortunately, most of us don’t know what it’s costing. We think it’s vitally important for the cost of reducing carbon to be more transparent to enable comparisons of the various options to help policy makers reduce emissions at the lowest overall cost to society. We are actively working to reduce our own emissions. Overall, we have reduced operated greenhouse gas emissions by 11 percent from 2016 to 2020, and we’ve laid out plans for significant further reductions by 2025. We are also working to find new and better ways to monitor and reduce methane emissions, including collaborations with universities, environmental groups and other industry partners. Through 2020, we reduced methane emissions nearly 34 percent across our U.S. unconventional operations, compared to 2016 when the Paris Agreement was signed. We have great respect for policy makers, elected officials and organizations across the political spectrum who are grappling to effectively address climate change, one of the greatest challenges of our time. ExxonMobil’s position is clear: we want to be part of the solution while responsibly providing affordable energy required to power the economy. We have the experience, capabilities, capacity and commitment to help meet this critical need. We understand the tremendous challenge represented by climate change and have fully supported the Paris Agreement since its inception. Our scientists are working to develop innovative solutions to help reduce emissions, with a focus on the highest emitting and most difficult to decarbonize sectors of the economy: commercial transportation, power generation and heavy industry.It is in these areas where we believe ExxonMobil can best contribute to the challenge of climate change. For example, through our new ExxonMobil Low Carbon\
+Solutions business we are advancing plans for large-scale emission reductions with new carbon capture and storage opportunities around the world. We are also leveraging ExxonMobil’s significant experience in the production of hydrogen which, when coupled with carbon capture and storage, is likely to play a critical role in a lower-carbon energy system. We’re investing $3 billion on lower-emission energy solutions through 2025 on top of $10 billion we’ve spent over the past two decades. As we develop additional value-added opportunities, I expect these investments to grow. We believe a price on carbon emissions is essential to achieving net zero emissions. Carbon pricing would send a clear signal through the market, creating incentives to reduce emissions, fostering investment in R&D to advance solutions and providing consumers with transparency to make the best choices.\
+While there is some resistance to a carbon tax, we are actively and publicly discussing other options, including lower-carbon fuels and other sector-based approaches that would place a uniform, predictable cost on carbon. Today, through government regulation and incentives, we are paying to reduce carbon throughout the economy. Unfortunately, most of us don’t know what it’s costing. We think it’s vitally important for the cost of reducing carbon to be more transparent to enable comparisons of the various options to help policy makers reduce emissions at the lowest overall cost to society.\
+We are actively working to reduce our own emissions. Overall, we have reduced operated greenhouse gas emissions by 11 percent from 2016 to 2020, and we’ve laid out plans for significant further reductions by 2025. We are also working to find new and better ways to monitor and reduce methane emissions, including collaborations with universities, environmental groups and other industry partners. Through 2020, we reduced methane emissions nearly 34 percent across our U.S. unconventional operations, compared to 2016 when the Paris Agreement was signed.\
+We have great respect for policy makers, elected officials and organizations across the political spectrum who are grappling to effectively address climate change, one of the greatest challenges of our time. ExxonMobil’s position is clear: we want to be part of the solution while responsibly providing affordable energy required to power the economy. We have the experience, capabilities, capacity and commitment to help meet this critical need."
+//let string = "we-un-der-stand-the-tre-men-dous-chall-enge-re-pre-sent-ed-by-cli-mate-change-and-have-fully-sup-ported-the-Paris-Agree-ment-since-its-in-cep-tion-Our-sci-entists-are-work-ing-to-dev-elop-inno-va-tIve-sol-u-tions-to-help-re-duce-em-iss-ions-with-a-fo-cus-on-the-high-est-emit-ting-and-most-diff-icult-to-de-car-bon-ize-sec-tors-of-the-economy: com-mer-cial-trans-port-ation-power-gen-eration-and-heavy-ind-ustry."
+
+let splitStringArr = string.split(' ');
+console.log(splitStringArr.length); 
+
+//let string2 = "ExxonMobil leverages its core capabilities to meet society’s needs for products"
+let _text;
 
 ///graph vars
 
@@ -32,7 +48,8 @@ let img;
 
 function preload(){
     table = loadTable("assets/monthly_csv.csv", "csv", "header")
-    font1 = loadFont("assets/mons.ttf")
+    //font1 = loadFont("assets/mons.ttf")
+    font1 = loadFont("opensans.ttf")
     img = loadImage("icon2.png")
   }
 
@@ -44,7 +61,8 @@ function setup(){
     myCanvas.position(0, (windowHeight-canvasH)/2);
     graphics = createGraphics(boxSize, boxSize);
     graphics.background(255)
-    
+   
+   
     //setting up camera
     createEasyCam();
     document.oncontextmenu = ()=> false;
@@ -66,25 +84,19 @@ function setup(){
     
     cursor(HAND);
     textFont(font1);
+
+
+    
 };
 
 
 function draw(){
       background(255);
       fill(255,0,0)
-      ambientLight(100);
-      directionalLight(255,255,255,0,0,1)
-      
-    
+   
 
       graphics.fill(225,0,222);
-//       graphics.textSize(14);
-//     graphics.textFont(font1)
-//    // graphics.text(CHAINDETAILS.text, 10,20);
-//    graphics.ellipse(5,5,100);
-    
-//        texture(graphics);
-     // box(boxSize);
+
 
       push();
         translate(-width/2, -height/2, -boxSize/2);
@@ -175,16 +187,9 @@ function mainGraph(){
      point(x,y,z);
      
   
+     
       
-      //tag
-      push();
-      translate(0, 0, z);
-      textSize(5);
-      fill(0);
-      textAlign(CENTER);
-      //text(mean[i], x, y+20);
-     // text(CHAINDETAILS.text, x, y)
-      pop();
+   
       
       
       //connecting the points
@@ -194,18 +199,31 @@ function mainGraph(){
         nextY = map(mean[i+1], -0.78, 1.35, height/2+boxSize/2, height/2-boxSize/2);
         nextZ = gapZ*((i+1)%12);
       }
-      strokeWeight(1);
+      strokeWeight(0.5);
       beginShape();
       if(i%12 !=11){
-       
-      
          
-         
-        // vertex(x,y,z);
-        // vertex(nextX, nextY, nextZ);
+        vertex(x,y,z);
+        vertex(nextX, nextY, nextZ);
      
       }
       endShape();
+
+      //tag
+      push();
+  
+      translate(0, 0, z);
+      
+      textSize(3);
+      fill(0);
+      textAlign(CENTER);
+      fill(255,0,0)
+    
+      text(splitStringArr[i], x, y+3) /// this works
+      
+      //text(mean[i], x, y+20);
+     // text(CHAINDETAILS.text, x, y)
+      pop();
        
      
    
@@ -223,25 +241,25 @@ function mainGraph(){
     //  }
     //  pop()
 
-      if(i == 22){
+      // if(i == 22){
           
-          fill(0,0,255)
-        dragSegment(0, x, y);
-            push()
-                for(var j=0; j < CHAINDETAILS.text.length-1; j++) {
-                    translate(0,0,z/100)
+      //     fill(0,0,255)
+      //   dragSegment(0, x, y);
+      //       push()
+      //           for(var j=0; j < CHAINDETAILS.text.length-1; j++) {
+      //               translate(0,0,z/100)
                   
-                    dragSegment(j+1, x, y);
+      //               dragSegment(j+1, x, y);
                     
-                    }
-                    pop()
+      //               }
+      //               pop()
 
-                  beginShape()
-                   vertex(x,y,z);
-                    vertex(nextX, nextY, nextZ);
-                  endShape()
+      //             beginShape()
+      //              vertex(x,y,z);
+      //               vertex(nextX, nextY, nextZ);
+      //             endShape()
     
-        }
+      //   }
 
   
       
