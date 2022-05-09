@@ -5,8 +5,8 @@ let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 let userCount = 0;
 app.use(express.static('public'))
-//const port = 3000;
-const port = process.env.PORT;
+const port = 3000;
+//const port = process.env.PORT;
 
 
 
