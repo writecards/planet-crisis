@@ -27,7 +27,7 @@ sendbutton1.addEventListener("click", ()=>{
     messagebox1.value = ""
   }
 
-   nextWord(text, word1);
+   //nextWord(text, word1);
 })
 
 sendbutton2.addEventListener("click", ()=>{
@@ -73,80 +73,25 @@ function appendMessage1(message){
   li.appendChild(p);
   word1.prepend(li);
   word1.scrollTop = 0;
-}
 
-
-
-// function nextWord(inputData, wordListNum) {
-//   let li = document.createElement("li");
-//   let p = document.createElement("p");
-//      // let txt = messagebox1.value.trim();
-//     let txt = inputData;
-//     let words = RiTa.tokenize(txt); // split into words
-
-//     // loop from a random spot
-//     let r = Math.floor(Math.random(0, words.length));
-//    // let r = randomFromArray(words);
-
-//     for (let i = r; i < words.length + r; i++) {
-//       let idx = i % words.length;
-      
-//       let word = words[idx].toLowerCase();
-//       if (word.length < 3) continue; // len >= 3
-
-//       // find related words
-//       let pos = RiTa.tagger.allTags(word)[0];
-//       let rhymes = RiTa.rhymes(word, { pos });
-//       let sounds = RiTa.soundsLike(word, { pos });
-//       let spells = RiTa.spellsLike(word, { pos });
-//       let similars = [...rhymes, ...sounds, ...spells];
-
-//       // only words with 2 or more similars
-//       if (similars.length < 2) {
-//         console.log("No sims for " + word);
-//         continue;
-//       }
-
-//       // pick a random similar
-//       let next = RiTa.random(similars);
-
-//       if (next.includes(word) || word.includes(next)) {
-        
-//         continue;                     // skip substrings
-//       }
-//       if (/[A-Z]/.test(words[idx][0])) {
-//         next = RiTa.capitalize(next); // keep capitals
-        
-//       }
-
-//       console.log("replace(" + idx + "): " + word + " -> " + next);
-
-//       words[idx] = next;             // do replacement
-      
-//       break;
-//     }
-
-    // recombine into string and display
-
-  //  txt = RiTa.untokenize(words); 
-    
-    //let display = txt.join("\n");
-    //background(255)
-    // fill(255,0,0)
-   // p.innerHTML = txt;
- 
-  //  li.appendChild(p);
-  // make sure the new messages appear on top of the previous ones:
-  // from: https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend
- // wordListNum.prepend(li);
- // wordListNum.scrollTop = 0;
-//   // for (let i = word1.children.length; i >= 0; i--) {
-//   //   word1.appendChild(word1.children[Math.random() * i | 0]);
-//   // }
+  // let ul = document.querySelectorAll('ul li');
   
- //}
+  // ul.addEventListener("click", ()=>{
+  //   console.log("clicked on ul");
+  // })
+  document.querySelectorAll('ul li').forEach(item =>{
+    item.addEventListener("click", ()=>{
+      console.log("clicked on li");
+      nextWord(text,word1)
+    })
+  })
 
 
+//   let lis1 = word1.getElementsByTagName('li');
+// for(let i = 0; i < lis1.length; i ++){
+//   console.log("lis are: " +lis1[i]);
+// } 
+}
 
 function appendMessage2(message){
   let text = message.content;
@@ -157,10 +102,12 @@ function appendMessage2(message){
   li.appendChild(p);
   word2.prepend(li);
   word2.scrollTop = 0;
-  // for (let i = word2.children.length; i >= 0; i--) {
-  //   word2.appendChild(word2.children[Math.random() * i | 0]);
-  // }
-  
+  document.querySelectorAll('ul li').forEach(item =>{
+    item.addEventListener("click", ()=>{
+      console.log("clicked on li");
+      nextWord(text,word2)
+    })
+  })
 }
 
 function appendMessage3(message){
@@ -173,36 +120,30 @@ function appendMessage3(message){
   li.appendChild(p);
   word3.prepend(li);
   word3.scrollTop = 0;
-
-
-  // let filler2p = document.createElement("p");
-  // let filler2li = document.createElement("li");
-  // filler2p.innerHTML = randomFromArray(filler2array)
-  // filler2li.appendChild(filler2p);
-  // filler2.prepend(filler2li);
-
-
-  // for (let i = word3.children.length; i >= 0; i--) {
-  //   word3.appendChild(word3.children[Math.random() * i | 0]);
-  // }
+  document.querySelectorAll('ul li').forEach(item =>{
+    item.addEventListener("click", ()=>{
+      console.log("clicked on li");
+      nextWord(text,word3)
+    })
+  })
 }
 
-function nextWord(inputData, wordListNum){ //just gets a similar word
-  let li = document.createElement("li");
-  let p = document.createElement("p");
-  let randomWordArray = RiTa.soundsLike(inputData, {minDistance: 1, limit: 20, shuffle: true});
-//console.log("RiTa randWords:" + randomWordArray);
-   let displayWord = randomFromArray(randomWordArray);
-  console.log("replace " + inputData + " -> " + displayWord);
+// function nextWord(inputData, wordListNum){ //just gets a similar word
+//   let li = document.createElement("li");
+//   let p = document.createElement("p");
+//   let randomWordArray = RiTa.soundsLike(inputData, {minDistance: 1, limit: 20, shuffle: true});
+// //console.log("RiTa randWords:" + randomWordArray);
+//    let displayWord = randomFromArray(randomWordArray);
+//   console.log("replace " + inputData + " -> " + displayWord);
   
-  p.innerHTML = displayWord;
+//   p.innerHTML = displayWord;
   
   
-  li.appendChild(p);
-  wordListNum.prepend(li);
-   wordListNum.scrollTop = 0;
+//   li.appendChild(p);
+//   wordListNum.prepend(li);
+//    wordListNum.scrollTop = 0;
  
-}
+// }
 
 
 function updateUserCount(data){
@@ -266,17 +207,6 @@ socket.on('word3-archive', (data)=>{
   }
 })
 
-socket.on('word4-archive', (data)=>{
-  
-  //send previous messages to new users
-  let keys = Object.keys(data);
-  for(let i = 0; i < keys.length; i++){
-    let key = keys[i];
-    let datapoint = data[key]
-    //console.log(datapoint)
-    appendMessage4(datapoint)
-  }
-})
 
 
 // from: https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
@@ -304,3 +234,71 @@ messagebox3.addEventListener("keyup", function(event) {
   }
 });
 
+
+
+function nextWord(inputData, wordListNum) {
+  let li = document.createElement("li");
+  let p = document.createElement("p");
+     // let txt = messagebox1.value.trim();
+    let txt = inputData;
+    let words = RiTa.tokenize(txt); // split into words
+
+    // loop from a random spot
+    let r = Math.floor(Math.random(0, words.length));
+   // let r = randomFromArray(words);
+
+    for (let i = r; i < words.length + r; i++) {
+      let idx = i % words.length;
+      
+      let word = words[idx].toLowerCase();
+      if (word.length < 3) continue; // len >= 3
+
+      // find related words
+      let pos = RiTa.tagger.allTags(word)[0];
+      let rhymes = RiTa.rhymes(word, { pos });
+      let sounds = RiTa.soundsLike(word, { pos });
+      let spells = RiTa.spellsLike(word, { pos });
+      let similars = [...rhymes, ...sounds, ...spells];
+
+      // only words with 2 or more similars
+      if (similars.length < 2) {
+        console.log("No sims for " + word);
+        continue;
+      }
+
+      // pick a random similar
+      let next = RiTa.random(similars);
+
+      if (next.includes(word) || word.includes(next)) {
+        
+        continue;                     // skip substrings
+      }
+      if (/[A-Z]/.test(words[idx][0])) {
+        next = RiTa.capitalize(next); // keep capitals
+        
+      }
+
+      console.log("replace(" + idx + "): " + word + " -> " + next);
+
+      words[idx] = next;             // do replacement
+      
+      break;
+    }
+
+    // recombine into string and display
+
+    txt = RiTa.untokenize(words); 
+    
+    //let display = txt.join("\n");
+    //background(255)
+    // fill(255,0,0)
+
+
+     p.innerText = txt;
+     p.style.color = "yellow";
+    li.appendChild(p);
+    wordListNum.prepend(li);
+    wordListNum.scrollTop = 0;
+
+  
+ }
