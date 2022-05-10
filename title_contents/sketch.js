@@ -17,6 +17,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+//const { clear } = require("console");
+
+//const { clear } = require("console");
+
 /**
  * fontgenerator with dynamic elements
  *
@@ -52,9 +56,10 @@ textAlign(CENTER);
 }
 
 function draw() {
+clear();
   if (!font) return;
 
-  background(255);
+  background(255, 10);
   if (filled) {
     noStroke();
     fill(0);

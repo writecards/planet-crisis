@@ -1,3 +1,5 @@
+//const { clear } = require("console");
+
 let size;
 
 function setup() {
@@ -8,7 +10,8 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  clear();
+  background(255, 10);
   translate(width/2, height/2);
   noFill()
   stroke(0)

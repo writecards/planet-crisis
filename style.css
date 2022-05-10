@@ -20,6 +20,8 @@ body{
     margin: 0; 
     padding: 10px;
     font-family: 'Lexend Deca', sans-serif;
+    background: rgb(181,181,181);
+    background: linear-gradient(90deg, rgba(181,181,181,1) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 62%, rgba(255,249,95,1) 100%);
    
 }
 
