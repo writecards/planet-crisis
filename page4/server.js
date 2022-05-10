@@ -36,9 +36,10 @@ let wordList5 = database.ref('wordList5');
 
 
 io.on('connection', (socket) => {
-
+  
   wordList1.once('value').then((snapshot) =>{
     let archivalData = snapshot.val();
+    console.log("archivalData: " +archivalData)
     socket.emit('word1-archive', archivalData);
   })
   
@@ -50,16 +51,6 @@ io.on('connection', (socket) => {
   wordList3.once('value').then((snapshot) =>{
     let archivalData = snapshot.val();
     socket.emit('word3-archive', archivalData);
-  })
-
-  wordList4.once('value').then((snapshot) =>{
-    let archivalData = snapshot.val();
-    socket.emit('word4-archive', archivalData);
-  })
-
-  wordList5.once('value').then((snapshot) =>{
-    let archivalData = snapshot.val();
-    socket.emit('word5-archive', archivalData);
   })
 
   console.log('a user connected');
@@ -83,15 +74,7 @@ io.on('connection', (socket) => {
     io.emit('message-to-all', data);
   });
 
-  socket.on('message-from-four', (data) => {
-    wordList4.push(data);
-    io.emit('message-to-all', data);
-  });
-
-  socket.on('message-from-five', (data) => {
-    wordList5.push(data);
-    io.emit('message-to-all', data);
-  });
+ 
 
   socket.on('disconnect', () => {
     console.log('user disconnected');
