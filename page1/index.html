@@ -11,12 +11,34 @@
         <title>1</title>
 </head>
 <body>
-    <h1 id = "secretText">can we wait much longer?</h1>
-    <script src="sketch.js"></script>
+    <!-- <h1 id = "secretText">can we wait much longer?</h1> -->
+    <div class = "mainWrapper" >
+        <div class = "title">
+            <p id = "countdown"></p>
+        </div>
+        
+        <div class = "trees">
+            <div class = "tree-left">
+                <iframe id = "tree1" src="tree1_index.html">
+                </iframe>
+             </div>
+            <div class = "tree-middle">
+                <iframe id = "tree2" src="tree2_index.html">
+                </iframe>
+             </div>
+            <div class = "tree-right">
+                <iframe id = "tree3" src="tree3_index.html">
+                </iframe>
+            </div>
+        </div>
+ 
+    
+   
+</div>
     
     <button onclick="window.location.href='/sutro-tower/page2/index.html'" id = "nextButton">next</button>
     <button onclick="window.location.href='/sutro-tower/intro/index.html'" id = "homeButton">prev</button>
   
-    
+    <script src = "script.js"></script>
 </body>
 </html>
