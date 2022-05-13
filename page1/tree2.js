@@ -4,7 +4,7 @@
 var angle;
 var axiom = "F";
 var sentence = axiom;
-var len =   150;
+var len =   200;
 var rules = [];
  rules[0] = {
   a: "F",
@@ -20,11 +20,12 @@ let count = 0;
 
 let secretText = document.getElementById("secretText");
 
-
+secretText.style.display = "none";
+secretText.style.color = "red";
 
 
 function generate() {
-  len *= 0.42
+  len *= 0.5
   var nextSentence = "";
   for (var i = 0; i < sentence.length; i++) {
     var current = sentence.charAt(i);
@@ -61,7 +62,7 @@ function generate() {
 function turtle(){
   background(255)
   resetMatrix();
-  translate(width/2,height-190)
+  translate(width/2,height-200)
   stroke(244,0,0,90)
   strokeWeight(1)
   noFill()

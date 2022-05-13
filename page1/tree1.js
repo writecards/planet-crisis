@@ -4,7 +4,7 @@
 var angle;
 var axiom = "F";
 var sentence = axiom;
-var len =   150;
+var len =   200;
 var rules = [];
  rules[0] = {
   a: "F",
@@ -17,11 +17,12 @@ var rules = [];
    
 }
 let count = 0;
+let numSecs = 3;
 
 let secretText = document.getElementById("secretText");
 
-// secretText.style.display = "none";
-// secretText.style.color = "red";
+secretText.style.display = "none";
+secretText.style.color = "red";
 
 
 function generate() {
@@ -50,10 +51,13 @@ function generate() {
 
   if(count >= 5){ // remove() gives bugs iwth createP, resetSketch doesnt reset count/turtle
     //remove();
-  //resetSketch();
+  
   sentence = ""; //stops the tree from growing bc no more letters for turtle to read
- 
+  // resetSketch();
+  //resetSketch();
+  
  }
+ 
  if(count >= 6){
   secretText.style.display = "block";
  }
@@ -62,7 +66,7 @@ function generate() {
 function turtle(){
   background(255)
   resetMatrix();
-  translate(width/2,height-150)
+  translate(width/2,height-100)
   stroke(244,0,0,90)
   strokeWeight(1)
   noFill()
@@ -89,32 +93,40 @@ function setup() {
   myCanvas = createCanvas(windowWidth, windowHeight);
   background(0,255,0);
   angle = radians(23)
- // createP(axiom)
   turtle();
-  // let button = createButton("generate")
-
-  // button.mousePressed(generate);
   
-
   //reasoning behind 380 seconds: given current emission trends, the earth is estimated to reach 1.5 degrees
   // of global warming by july 28 2028. inspired by the climate clock in new york, the tree is counting down 
       //  from may 2 2022 to july 28 2028, which is 2280 days. 
       // i've adopted this number into the project, so that the tree grows a full cycle every 2280 seconds.
       // the tree generates in 6 stages, and 2280/6 = 380. 
 
- doSomethingSyncedEveryXseconds(3, 5, function(currentStage){
+  
+     
+ doSomethingSyncedEveryXseconds(numSecs, 5, function(currentStage){
    generate();
   })
     
+  // let button = createButton("generate")
+
+  // button.mousePressed(generate);
   
 }
 
 
 
 function resetSketch(){
-  myCanvas.clear();
-  background(255);
-  resetMatrix();
+  myCanvas = createCanvas(windowWidth, windowHeight);
+  background(0,255,0);
+  angle = radians(23)
+  turtle();
+  doSomethingSyncedEveryXseconds(numSecs, 5, function(currentStage){
+    generate();
+   })
+  // myCanvas.clear();
+  // background(255);
+  // resetMatrix();
+  
 }
 
 function doSomethingSyncedEveryXseconds(x, numStages, callback){
