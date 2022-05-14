@@ -169,6 +169,7 @@ const serverConnection = new WebSocket(serverAddress);
 
 serverConnection.onopen = function(){
   console.log("p5 just connected to the server" + serverAddress);
+  document.body.style.cursor = "pointer";
   // userCount++;
   // console.log(userCount + " human(s) online");
   // serverConnection.send("hello server from p5");
@@ -198,7 +199,7 @@ serverConnection.onmessage = function(event){
     } else {
       userCount = event.data;
         console.log("Result: userCount = " + userCount);
-        userCountP.innerHTML = userCount + " human(s) online.";
+        userCountP.innerHTML = userCount-1 + " other human(s) here with you.";
     }
     //console.log(event.data + " event data");
 }
