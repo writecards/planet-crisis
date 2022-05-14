@@ -114,16 +114,27 @@ class Walker{
 
 function draw() {
   if(ranNum == 0){
-    dotFill =  color(252, 140, 3);
+    dotFill =  color(168, 64, 50);
   }else if(ranNum == 1){
-    dotFill =  color(255, 21, 0);
+    dotFill =  color(245, 197, 76);
   }else if(ranNum == 2){
-    dotFill = color(0, 166, 255);
+    dotFill = color(76, 228, 245);
   }else if(ranNum == 3){
-    dotFill = color(0, 166, 255);
+    dotFill = color(76, 93, 245);
   }else if(ranNum == 4){
-    dotFill = color(4, 0, 255);
+    dotFill = color(79, 0, 176);
+  }else if(ranNum == 5){
+    dotFill = color(177, 164, 235);
+  }else if(ranNum == 6){
+    dotFill = color(247, 160, 84);
+  }else if(ranNum == 7){
+    dotFill = color(140, 173, 194);
+  }else if(ranNum == 8){
+    dotFill = color(86, 26, 92);
+  }else if(ranNum == 9){
+    dotFill = color(47, 0, 255);
   }
+  
   
    // walkers.push(new Walker(target.x, target.y));
     walkers.forEach(walker =>{ if(!walker.isOut()){
@@ -222,15 +233,25 @@ serverConnection.onmessage = function(event){
         console.log("event.data: " + event.data);
         
         if(ranNum == 0){
-          youTextCol = "rgb(252, 140, 3)";
+          youTextCol = "rgb(168, 64, 50)";
         }else if(ranNum == 1){
-          youTextCol = "rgb(255, 21, 0)";
+          youTextCol = "rgb(245, 197, 76)";
         }else if(ranNum == 2){
-          youTextCol = "rgb(0, 166, 255)";
+          youTextCol = "rgb(76, 228, 245)";
         }else if(ranNum == 3){
-          youTextCol = "rgb(0, 166, 255)";
+          youTextCol = "rgb(76, 93, 245)";
         }else if(ranNum == 4){
-          youTextCol = "rgb(4, 0, 255)";
+          youTextCol = "rgb(79, 0, 176)";
+        }else if(ranNum == 5){
+          youTextCol = "rgb(177, 164, 235)";
+        }else if(ranNum == 6){
+          youTextCol = "rgb(79, 0, 176)";
+        }else if(ranNum == 7){
+          youTextCol = "rgb(140, 173, 194)";
+        }else if(ranNum == 8){
+          youTextCol = "rgb(86, 26, 92)";
+        }else if(ranNum == 9){
+          youTextCol = "rgb(47, 0, 255)";
         }
         you.style.color = youTextCol;
          userCountP.innerHTML = userCount-1;
