@@ -17,6 +17,8 @@ let target = {
 let userCount = 0;
 let userDotPalette;
 
+let userCountP = document.getElementById("usercountP");
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0)
@@ -167,8 +169,8 @@ const serverConnection = new WebSocket(serverAddress);
 
 serverConnection.onopen = function(){
   console.log("p5 just connected to the server" + serverAddress);
-  userCount++;
-  console.log(userCount + " human(s) online");
+  // userCount++;
+  // console.log(userCount + " human(s) online");
   // serverConnection.send("hello server from p5");
 }
 
@@ -194,9 +196,14 @@ serverConnection.onmessage = function(event){
     
        // target = event.data;
     } else {
-        console.log("Result: " + event.data);
+      userCount = event.data;
+        console.log("Result: userCount = " + userCount);
+        userCountP.innerHTML = userCount + " human(s) online.";
     }
+    //console.log(event.data + " event data");
 }
+
+
 
 serverConnection.onclose = function(event){
   console.log("someone left");
