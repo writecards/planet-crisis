@@ -1,3 +1,4 @@
+// const { text } = require("stream/consumers");
 
 
 let cell = 5;
@@ -14,24 +15,31 @@ let target = {
   y: 100
 }
 
-let userCount = 0;
+
 let userDotPalette;
 
-let userCountP = document.getElementById("usercountP");
+let userCountP = document.getElementById("usercount");
+let you = document.getElementById("colorfulYou");
+
+let ranNum;
+let userCount;
+let dotFill;
+let youTextCol;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight+1);
   background(0)
   
   colorMode(RGB);
    
   walkers.push(new Walker());
-
+  dotFill = color(255, 0, 195);
+  
   
 }
 
 class Walker{
-    constructor(x,y){
+    constructor(x,y){ //add userdot color to instructor, first make sure it can be assigned in server
       this.pos = createVector(x,y);
       this.vel = p5.Vector.random2D();
       this.vel.mult(random(10))
@@ -46,13 +54,7 @@ class Walker{
       ];
       this.userDotX = x;
       this.userDotY = y;
-      this.userDotPalette = [
-        color(252, 140, 3),
-        color(255, 21, 0),
-        color(0, 166, 255),
-        color(4, 0, 255),
-        color(4, 0, 255)
-      ]
+      
   
     }
   
@@ -62,10 +64,10 @@ class Walker{
     }
 
    
-    getRandomUserDotCol(){
-      let randCol = floor(random(0,this.userDotPalette.length))
-      return this.userDotPalette[randCol]
-    }
+    // getRandomUserDotCol(){
+    //   let randCol = floor(random(0,this.userDotPalette.length))
+    //   return this.userDotPalette[randCol]
+    // }
     
     isOut(){
       return(this.pos.x < 0 || this.pos.x > width || this.pos.y < 0 || this.pos.y > height);
@@ -95,9 +97,9 @@ class Walker{
       ellipse(this.pos.x,this.pos.y,cell,cell);
     }
 
-    drawUserDot(){
-      this.userFill = this.getRandomUserDotCol();
-      fill(this.userFill);
+    drawUserDot(dotFill){
+      
+      fill(dotFill)
       ellipse(this.userDotX, this.userDotY, cell*1.5, cell*1.5);
     }
      
@@ -111,15 +113,27 @@ class Walker{
 
 
 function draw() {
+  if(ranNum == 0){
+    dotFill =  color(252, 140, 3);
+  }else if(ranNum == 1){
+    dotFill =  color(255, 21, 0);
+  }else if(ranNum == 2){
+    dotFill = color(0, 166, 255);
+  }else if(ranNum == 3){
+    dotFill = color(0, 166, 255);
+  }else if(ranNum == 4){
+    dotFill = color(4, 0, 255);
+  }
   
    // walkers.push(new Walker(target.x, target.y));
     walkers.forEach(walker =>{ if(!walker.isOut()){
     walker.move();
     walker.show();
-    walker.drawUserDot();
+    walker.drawUserDot(dotFill);
   }
   });
 
+  
   
 }
 
@@ -191,15 +205,35 @@ serverConnection.onmessage = function(event){
             console.log("obj: " + obj);
             target = obj;
             walkers.push(new Walker(obj.x, obj.y))
+            
         };
 
         reader.readAsText(event.data);
     
        // target = event.data;
     } else {
-      userCount = event.data;
-        console.log("Result: userCount = " + userCount);
-        userCountP.innerHTML = userCount-1 + " other human(s) here with you.";
+      let userInfo = JSON.parse(event.data);
+       userCount = userInfo.userCount;
+       ranNum = userInfo.randomNum;
+      // let userCount = event.data["userCount"];
+      // let ranNum = event.data["randomNum"];
+        console.log("userCount = " + userCount);
+        console.log("ranNum: " + ranNum);
+        console.log("event.data: " + event.data);
+        
+        if(ranNum == 0){
+          youTextCol = "rgb(252, 140, 3)";
+        }else if(ranNum == 1){
+          youTextCol = "rgb(255, 21, 0)";
+        }else if(ranNum == 2){
+          youTextCol = "rgb(0, 166, 255)";
+        }else if(ranNum == 3){
+          youTextCol = "rgb(0, 166, 255)";
+        }else if(ranNum == 4){
+          youTextCol = "rgb(4, 0, 255)";
+        }
+        you.style.color = youTextCol;
+         userCountP.innerHTML = userCount-1;
     }
     //console.log(event.data + " event data");
 }

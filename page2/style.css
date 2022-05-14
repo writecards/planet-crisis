@@ -2,6 +2,8 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: rgb(0,0,0);
+background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(148,187,233,1) 100%);
    
   }
   canvas {
@@ -70,3 +72,5 @@ html, body {
       left:5%;
       top: 5%;
   }
+
+  
