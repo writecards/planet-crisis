@@ -7,7 +7,7 @@
  let sentences = str.split("\\");
  let textOnScreen = document.getElementById("text");
  let counter = 0;
- let baseFreq = 100;
+ 
 
  let citestr = "*Rob Nixon, Slow Violence";
  let citationText = document.getElementById("citation");
@@ -22,20 +22,6 @@ let nextBtn = document.getElementById("nextButton");
 homeBtn.style.display = "none";
 nextBtn.style.display = "none";
 
-
-// const noise = new Tone.Noise("brown").start();
-// // make an autofilter to shape the noise
-// const autoFilter = new Tone.AutoFilter({
-// 	frequency: "0n",
-// 	baseFrequency: 150,
-// 	octaves: 2,
-//   volume: -9,
-  
-// }).toDestination().start();
-// // connect the noise
-// noise.connect(autoFilter);
-// // start the autofilter LFO
-// autoFilter.start();
 
 document.addEventListener("click", playSound);
 
@@ -70,29 +56,34 @@ function displayText(){
    console.log(counter);
     counter++;
     textOnScreen.innerHTML = sentences[counter];
+    if(counter === 14){
+      textOnScreen.style.filter = "drop-shadow(5px 10px 10px #A0522D)";
+      citationText.style.display = "table";
+      textOnScreen.style.color = "#A0522D";
+     
+      
+     // textOnScreen.style.filter = "none";
+      
+    }else{
+      citationText.style.display = "none";
+      textOnScreen.style.filter = "";
+      textOnScreen.style.color = "";
+      
+    }
+
     if(counter == sentences.length){
         textOnScreen.style.display = "none";
         homeBtn.style.display = "block";
         nextBtn.style.display = "block";
     }
-    if(counter === 14){
-      citationText.style.display = "table";
-      
-    }else{
-      citationText.style.display = "none";
-      textOnScreen.style.filter = "";
-      
-    }
-  
     
-
-    baseFreq = randomIntFromInterval(50,5000);
+  
    
-  let pad = 250;
-    let bodyWidth = window.innerWidth;
+  let pad = 300;
+  let bodyWidth = window.innerWidth;
   let bodyHeight = window.innerHeight;
-  let randPosX = randomIntFromInterval(0, bodyWidth-pad);
-  let randPosY = randomIntFromInterval(0, bodyHeight-pad);
+  let randPosX = randomIntFromInterval(pad/2, bodyWidth-pad);
+  let randPosY = randomIntFromInterval(pad/2, bodyHeight-pad);
   
  
   textOnScreen.style.left = randPosX + "px";

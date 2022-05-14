@@ -7,6 +7,7 @@
     
    
     font-size: 40px;
+    
    
         /* color: transparent;
         text-shadow: 0 0 8px #000; */
@@ -22,6 +23,8 @@
 span {
     display: table;
     margin: 0 auto;
+    /* font-family: 'Lora', serif; */
+    font-family: 'Lexend Deca', sans-serif;
 }
 
 #text:hover{
@@ -40,9 +43,8 @@ body{
 
 
 #citation{
-    display: table;
     margin: 0 auto; 
-    color:slategray;
+    color:Sienna;
     position: absolute;
     padding:none;
     padding-left: 75%;
@@ -51,6 +53,20 @@ body{
    
     font-size: 24px;
 }
+
+#citation{
+  filter: blur(3px);
+      -webkit-filter: blur(10px);
+      transition: 0.1s;
+}
+
+#citation:hover{
+  filter:none;
+  transition: 0.7s;
+  cursor: pointer;
+  
+}
+
 
 button{
   background-color: #FFFFFF;
