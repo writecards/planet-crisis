@@ -23,14 +23,43 @@ homeBtn.style.display = "none";
 nextBtn.style.display = "none";
 
 
+// const noise = new Tone.Noise("brown").start();
+// // make an autofilter to shape the noise
+// const autoFilter = new Tone.AutoFilter({
+// 	frequency: "0n",
+// 	baseFrequency: 150,
+// 	octaves: 2,
+//   volume: -9,
+  
+// }).toDestination().start();
+// // connect the noise
+// noise.connect(autoFilter);
+// // start the autofilter LFO
+// autoFilter.start();
 
-document.addEventListener("click",playSound);
+document.addEventListener("click", playSound);
 
 function playSound(){
     console.log("clicked")
-    const noiseSynth = new Tone.NoiseSynth().toDestination();
-    noiseSynth.triggerAttackRelease("8n", 0.05);
+    const synth = new Tone.Synth().toDestination();
+    synth.triggerAttackRelease("C2", "16n");
+
+    const noise = new Tone.Noise("brown").start();
+    // make an autofilter to shape the noise
+    const autoFilter = new Tone.AutoFilter({
+      frequency: "0n",
+      baseFrequency: 20,
+      octaves: 2,
+      volume: -9,
+      
+    }).toDestination().start();
+    // connect the noise
+    noise.connect(autoFilter);
+    // start the autofilter LFO
+    autoFilter.start();
+   
 }
+
 
 function randomIntFromInterval(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min)
