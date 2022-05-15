@@ -245,7 +245,7 @@ serverConnection.onmessage = function(event){
         }else if(ranNum == 5){
           youTextCol = "rgb(177, 164, 235)";
         }else if(ranNum == 6){
-          youTextCol = "rgb(79, 0, 176)";
+          youTextCol = "rgb(247, 160, 84)";
         }else if(ranNum == 7){
           youTextCol = "rgb(140, 173, 194)";
         }else if(ranNum == 8){
