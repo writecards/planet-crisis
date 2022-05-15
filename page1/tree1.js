@@ -17,7 +17,7 @@ var rules = [];
    
 }
 let count = 0;
-let numSecs = 3;
+let numSecs = 380;
 
 let secretText = document.getElementById("secretText");
 
@@ -68,7 +68,7 @@ function turtle(){
   resetMatrix();
   translate(width/2,height-100)
   stroke(244,0,0,90)
-  strokeWeight(1)
+  strokeWeight(2)
   noFill()
   for(var i = 0; i < sentence.length; i++){
     var current = sentence.charAt(i);

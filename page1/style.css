@@ -15,6 +15,13 @@ canvas {
   top: 40%;
 }
 
+
+#about{
+  position: absolute;
+  left:5%;
+  top: 40%;
+  font-size: 36px;
+}
 button{
   background-color: #FFFFFF;
   border-radius: 8px;

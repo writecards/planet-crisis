@@ -22,7 +22,7 @@ let secretText = document.getElementById("secretText");
 
 secretText.style.display = "none";
 secretText.style.color = "red";
-
+let numSecs = 380;
 
 function generate() {
   len *= 0.5
@@ -64,7 +64,7 @@ function turtle(){
   resetMatrix();
   translate(width/2,height-200)
   stroke(244,0,0,90)
-  strokeWeight(1)
+  strokeWeight(2)
   noFill()
   for(var i = 0; i < sentence.length; i++){
     var current = sentence.charAt(i);
@@ -102,7 +102,7 @@ function setup() {
       // i've adopted this number into the project, so that the tree grows a full cycle every 2280 seconds.
       // the tree generates in 6 stages, and 2280/6 = 380. 
 
- doSomethingSyncedEveryXseconds(3, 5, function(currentStage){
+ doSomethingSyncedEveryXseconds(numSecs, 5, function(currentStage){
    generate();
   })
     
