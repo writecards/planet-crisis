@@ -36,7 +36,7 @@ body{
     height: 700px;
     margin: auto;
     
-    padding-top: 3%;
+    padding-top: 1%;
     /* outline: 1px black solid;  */
 }
 
@@ -115,12 +115,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 36px;
 
 }
 
 .left-item:last-child:hover{
     cursor: pointer;
 }
+
 
 /* RIGHT */
 .right{
@@ -129,7 +131,7 @@ body{
 .right-item{
     outline: 1px rgb(0, 0, 0) solid; 
     
-    
+    text-align: center;
 }
 
 .right-item:first-child{
@@ -177,3 +179,5 @@ body{
 
 iframe{ border: none;
 width: 100%; }
+
+
