@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script> -->
+    <script src="https://unpkg.com/rita"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+  </head>
+  <body>
+    <button onclick="window.location.href='/index.html'" id = "homeButton">home</button>
+  
+    <div id = "q1" class = "group">
+      <input type="text" id="messagebox1" name=""placeholder = "how you're feeling:" value="">
+      <button id="send1" type="button" name="button">Enter</button>
+    
+   
+    </div>
+
+    <div id = "q2" class = "group">
+      <input type = "text" id="messagebox8" name ="" placeholder ="[TEST]" value =""/>
+      <button id = "send8" type = "button" name = "button">Enter test</button>
+    </div>
+
+  
+  
+
+
+  
+  <p id = "usercountP"><span id="usercount">0</span> other human(s) online.</p>
+
+
+<div id = "userWords">
+
+  
+    <ul id="chat1">
+    </ul>
+  
+  
+  </div>
+
+    
+
+    <script type="text/javascript" src="script.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>real time messaging
+        </h1> 
+    <pre id = "messages" style = "height: 400px; overflow: scroll"></pre>
+    <input type = "text" id = "messageBox" placeholder = "type message here" style = "display: block; width: 100%; margin-bottom: 10px; padding: 10px;" />
+    <button id = "send" title = "send message" style = "width:100%; height: 30px;">send</button>
+
+
+    <script>
+        (function(){
+            const sendBtn = document.querySelector('#send');
+            const messages = document.querySelector('#messages');
+            const messageBox = document.querySelector('#messageBox');
+
+            let ws;
+            function showMessage(message){
+                //if (message.data instanceof Blob) {
+                     const   reader = new FileReader();
+
+                        reader.onload = () => {
+                        console.log("Result: " + reader.result);
+                        let obj = JSON.parse(reader.result);
+                        console.log("obj: " + obj);
+                
+            
+ //;
+
+        reader.readAsText(event.data);
+    
+       // target = event.data;
+    }
+
+
+
+
+              //  console.log("received message: " + message);
+             
+                messages.textContent += `\n\n${message}`;
+                messages.scrollTop = messages.scrollHeight;
+                messageBox.value = '';
+            }
+
+            function init(){
+                if(ws){
+                    ws.onerror = ws.onopen = ws.onclose = null;
+                    ws.close();
+                }
+            
+            ws = new WebSocket('ws://localhost:3030');
+            ws.onopen = ()=>{
+                console.log("connection opened");
+                }
+            
+            ws.onmessage = ({data}) => showMessage(data);
+            ws.onclose = function(){
+                ws = null;
+             }
+            }
+            
+            sendBtn.onclick = function(){
+                if(!ws){
+                    showMessage("No WebSocket Connection");
+                    return;
+                }
+              
+            //     const reader = new FileReader();
+
+            //     reader.onload = () => {
+            //         console.log("Result: " + reader.result);
+            //         let obj = JSON.parse(reader.result);
+            //         console.log("obj: " + obj);
+            //         }
+
+            //  reader.readAsText(messageBox.value);
+
+            //     if (messageBox.value instanceof Blob) {
+                   
+                     
+            //         }
+            
+                   console.log(messageBox.value);
+
+
+
+
+
+   
+                ws.send(messageBox.value);
+               // ws.send(reader.readAsText(messageBox.value))
+                showMessage(messageBox.value);
+               // showMessage(reader.readAsText(messageBox.value));
+            }
+
+
+            init();
+
+        })();
+
+    </script>
+</body>
+</html>

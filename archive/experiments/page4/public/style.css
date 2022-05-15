@@ -5,6 +5,7 @@ body{
 background: linear-gradient(90deg, rgba(0,2,221,1) 0%, rgba(152,35,97,1) 27%, rgba(180,68,0,1) 48%, rgba(152,35,97,1) 71%, rgba(0,2,221,1) 100%);
   /* background: rgb(63,94,251);
   background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(0,18,1,1) 70%, rgba(70,72,252,1) 100%); */
+ 
 }
 
 
@@ -49,7 +50,7 @@ button:focus-visible {
 
 #homeButton{
     position: absolute;
-    left:2%;
+    left: 2%;
     top: 5%;
 }
 
@@ -145,16 +146,17 @@ label{
   position:absolute;
   display: block;
   padding-left: 80%;
+  padding-top: 500%;
   font-size: 20px;
   color: white;
 }
 
 
 #userWords{
-  
+  position: absolute;
   width: 100%;
   padding-left: 14%;
-  padding-top: 10%;
+  margin-top: 20%;
   font-weight: 400;
 }
 
@@ -181,3 +183,9 @@ label{
   color:rgb(255, 102, 0);
 
 } 
+
+
+
+h1{
+  color: yellow;
+}
