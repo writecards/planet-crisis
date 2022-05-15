@@ -72,4 +72,10 @@ html, body {
       top: 5%;
   }
 
-  
+  #text{
+    text-align: center;
+    position: fixed;
+   top: 40px;
+    left: 44%;
+    
+  }
