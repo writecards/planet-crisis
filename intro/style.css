@@ -99,18 +99,19 @@ button{
   
 }
 
-
 #nextButton{
-    position: absolute;
+  position: absolute;
   left: 90%;
-  top: 90%;
+  top: 5%;
 }
 
 #homeButton{
     position: absolute;
     left:5%;
-    top: 90%;
+    top: 5%;
 }
+
+
 
 
 /* button{
